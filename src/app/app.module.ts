@@ -46,6 +46,10 @@ import {
 
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
+import { MasterComponent } from './master/master.component';
+import { MasterRoutingModule } from './/master-routing.module';
+import { RoutingModule } from './master/routing.module';
+import { MemberModule } from './member/member.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -71,6 +75,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AccordionAnchorDirective,
     AccordionLinkDirective,
     AccordionDirective,
+    MasterComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,7 +106,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FlexLayoutModule,
     BidiModule,
     AgmCoreModule.forRoot({apiKey: 'YOURAPIKEY'}),
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    MasterRoutingModule,
+    RoutingModule,
+    MemberModule
   ],
   providers: [
     {
